@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xwt.Gtk.Windows", "Xwt.Gtk.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xwt.Gtk3", "Xwt.Gtk\Xwt.Gtk3.csproj", "{3B25FD1F-CEBA-4450-8893-DC330FDB56A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xwt.XamMac", "Xwt.XamMac\Xwt.XamMac.csproj", "{B570A438-DCCB-494A-B87C-5CB0113978DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		AppStore|Any CPU = AppStore|Any CPU
@@ -386,6 +388,42 @@ Global
 		{92494904-35FA-4DC9-BDE9-3A3E87AC49D3}.Win-Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{92494904-35FA-4DC9-BDE9-3A3E87AC49D3}.Win-Debug|x86.ActiveCfg = Debug|Any CPU
 		{92494904-35FA-4DC9-BDE9-3A3E87AC49D3}.Win-Debug|x86.Build.0 = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.AppStore|Any CPU.ActiveCfg = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.AppStore|Any CPU.Build.0 = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.AppStore|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.AppStore|Mixed Platforms.Build.0 = Release|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.AppStore|x86.ActiveCfg = Release|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.AppStore|x86.Build.0 = Release|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Debug|x86.Build.0 = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Linux-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Linux-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Linux-Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Linux-Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Linux-Debug|x86.ActiveCfg = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Linux-Debug|x86.Build.0 = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Mac-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Mac-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Mac-Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Mac-Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Mac-Debug|x86.ActiveCfg = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Mac-Debug|x86.Build.0 = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Release|x86.ActiveCfg = Release|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Release|x86.Build.0 = Release|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Win-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Win-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Win-Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Win-Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Win-Debug|x86.ActiveCfg = Debug|Any CPU
+		{B570A438-DCCB-494A-B87C-5CB0113978DB}.Win-Debug|x86.Build.0 = Debug|Any CPU
 		{B7C1673E-5124-4BE5-8D21-EC8B12F85B6B}.AppStore|Any CPU.ActiveCfg = Debug|Any CPU
 		{B7C1673E-5124-4BE5-8D21-EC8B12F85B6B}.AppStore|Any CPU.Build.0 = Debug|Any CPU
 		{B7C1673E-5124-4BE5-8D21-EC8B12F85B6B}.AppStore|Mixed Platforms.ActiveCfg = Release|Any CPU
@@ -657,6 +695,7 @@ Global
 		{22524E1F-A94D-4204-AD90-A5FFE73970EC} = {83D74DDF-581E-4E2A-AE02-F4047A5B96C7}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Xwt\Xwt.csproj
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = None

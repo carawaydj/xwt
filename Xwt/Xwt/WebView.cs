@@ -100,7 +100,7 @@ namespace Xwt
 				return url;
 			}
 			set {
-		 		url = value;
+				url = value;
 				Backend.Url = url;
 			}
 		}
@@ -108,6 +108,16 @@ namespace Xwt
 		[DefaultValue("")]
 		public string Title {
 			get { return Backend.Title ?? ""; }
+		}
+
+		public void LoadLocalHtml (string fileName, string ext)
+		{
+			Backend.LoadLocalHtml (fileName, ext);
+		}
+
+		public void InvokeJs (string js)
+		{
+			Backend.InvokeJs (js);
 		}
 
 		[DefaultValue(0.0)]
@@ -223,4 +233,3 @@ namespace Xwt
 		}
 	}
 }
-

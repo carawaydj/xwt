@@ -26,10 +26,14 @@
 // THE SOFTWARE.
 
 using System;
+using System.IO;
 using Xwt.Backends;
 using MonoMac.AppKit;
 using MonoMac.Foundation;
 using MonoMac.WebKit;
+//using TinyIoC;
+//using TinyMessenger;
+//using ForceReadiness.LearnEngine.Core;
 
 namespace Xwt.Mac
 {
@@ -48,12 +52,14 @@ namespace Xwt.Mac
 		public override void Initialize()
 		{
 			base.Initialize ();
+
 			ViewObject = new MacWebView ();
 		}
 
 		public string Url {
 			get { return Widget.MainFrameUrl; }
-			set {
+			set 
+			{
 				Widget.MainFrameUrl = value;
 			}
 		}
@@ -62,6 +68,20 @@ namespace Xwt.Mac
 			get {
 				return Widget.MainFrameTitle;
 			}
+		}
+
+		public void LoadLocalHtml (string fileName, string ext)
+		{
+			var path = NSBundle.MainBundle.PathForResource (fileName, ext);
+			var request = new NSUrlRequest(new NSUrl(path, false)); 
+
+
+			Widget.MainFrame.LoadRequest(request);
+		}
+
+		public void InvokeJs (string js)
+		{
+			Widget.StringByEvaluatingJavaScriptFromString (js);
 		}
 
 		public double LoadProgress { 
@@ -116,10 +136,10 @@ namespace Xwt.Mac
 			base.EnableEvent (eventId);
 			if (eventId is WebViewEvent) {
 				switch ((WebViewEvent)eventId) {
-					case WebViewEvent.NavigateToUrl: Widget.StartedProvisionalLoad += HandleStartedProvisionalLoad; break;
-					case WebViewEvent.Loading: Widget.CommitedLoad += HandleLoadStarted; break;
-					case WebViewEvent.Loaded: Widget.FinishedLoad += HandleLoadFinished; break;
-					case WebViewEvent.TitleChanged: Widget.ReceivedTitle += HandleTitleChanged; break;
+				case WebViewEvent.NavigateToUrl: Widget.StartedProvisionalLoad += HandleStartedProvisionalLoad; break;
+				case WebViewEvent.Loading: Widget.CommitedLoad += HandleLoadStarted; break;
+				case WebViewEvent.Loaded: Widget.FinishedLoad += HandleLoadFinished; break;
+				case WebViewEvent.TitleChanged: Widget.ReceivedTitle += HandleTitleChanged; break;
 				}
 			}
 		}
@@ -129,10 +149,10 @@ namespace Xwt.Mac
 			base.DisableEvent (eventId);
 			if (eventId is WebViewEvent) {
 				switch ((WebViewEvent)eventId) {
-					case WebViewEvent.NavigateToUrl: Widget.StartedProvisionalLoad -= HandleStartedProvisionalLoad; break;
-					case WebViewEvent.Loading: Widget.CommitedLoad += HandleLoadStarted; break;
-					case WebViewEvent.Loaded: Widget.FinishedLoad -= HandleLoadFinished; break;
-					case WebViewEvent.TitleChanged: Widget.ReceivedTitle -= HandleTitleChanged; break;
+				case WebViewEvent.NavigateToUrl: Widget.StartedProvisionalLoad -= HandleStartedProvisionalLoad; break;
+				case WebViewEvent.Loading: Widget.CommitedLoad += HandleLoadStarted; break;
+				case WebViewEvent.Loaded: Widget.FinishedLoad -= HandleLoadFinished; break;
+				case WebViewEvent.TitleChanged: Widget.ReceivedTitle -= HandleTitleChanged; break;
 				}
 			}
 		}
@@ -180,8 +200,25 @@ namespace Xwt.Mac
 	{
 		public ViewBackend Backend { get; set; }
 
-		public NSView View {
+		public NSView View 
+		{
 			get { return this; }
+		}
+
+		public MacWebView() : base ()
+		{
+			/*this.UIMouseDidMoveOverElement += (object sender, WebViewMouseMovedEventArgs e) => 
+			{
+				if(e.ElementInformation.ContainsKey(new NSString("WebElementImageURL")))
+				{
+					NSUrl url = (NSUrl)e.ElementInformation["WebElementImageURL"];
+					string path = url.AbsoluteString;
+					var messageHub = TinyIoCContainer.Current.Resolve<ITinyMessengerHub>();
+					ImageClickedMessage msg = new ImageClickedMessage();
+					msg.Path = path;
+					messageHub.Publish (msg);
+				}
+			};*/
 		}
 	}
 }
