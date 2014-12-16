@@ -283,10 +283,15 @@ namespace Xwt
 		/// Gets the screen on which most of the area of this window is placed
 		/// </summary>
 		/// <value>The screen.</value>
-		public Screen Screen {
-			get {
+		public Screen Screen 
+		{
+			get 
+			{
 				if (!Visible)
-					throw new InvalidOperationException ("The window is not visible");
+				{
+					//throw new InvalidOperationException ("The window is not visible");
+				}
+					
 				return Desktop.GetScreen (Backend.Screen);
 			}
 		}

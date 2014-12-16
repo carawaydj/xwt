@@ -178,24 +178,29 @@ namespace Xwt
 			int i = type.IndexOf (',');
 			string assembly = type.Substring (i+1).Trim ();
 			type = type.Substring (0, i).Trim ();
-			try {
+			try 
+			{
 				Assembly asm = Assembly.Load (assembly);
 				if (asm != null) {
 					Type t = asm.GetType (type);
-					if (t != null) {
+					if (t != null) 
+					{
 						backend = (ToolkitEngineBackend) Activator.CreateInstance (t);
 						Initialize (isGuest);
 						return true;
 					}
 				}
 			}
-			catch (Exception ex) {
-				if (throwIfFails)
+			catch (Exception ex) 
+			{
+				if (throwIfFails) 
+				{
 					throw new Exception ("Toolkit could not be loaded", ex);
+				}
+
 				Application.NotifyException (ex);
 			}
-			if (throwIfFails)
-				throw new Exception ("Toolkit could not be loaded");
+
 			return false;
 		}
 
